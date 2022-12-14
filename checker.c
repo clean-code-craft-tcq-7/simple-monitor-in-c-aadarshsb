@@ -33,11 +33,11 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
   //Check if any bits are overwritten due to Error(s)
   if(0 == unionErrorObj.AllErrors)
   {
-    return 0;
+    return 1;
   }
   else 
   {
-    return 1;
+    return 0;
   }
 }
 
@@ -86,10 +86,6 @@ void PrintTheError(char* ErrorString)
 }
 
 int main() {
-  printf("First one \n");
-  batteryIsOk(25, 70, 0.7);
-  printf("Second one \n");
-  batteryIsOk(50, 85, 0);
-//  assert(batteryIsOk(25, 70, 0.7));
-//  assert(!batteryIsOk(50, 85, 0));
+  assert(batteryIsOk(25, 70, 0.7));
+  assert(!batteryIsOk(50, 85, 0));
 }
