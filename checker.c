@@ -5,6 +5,10 @@ char ErrorTemperature[]= "Temperature out of range!\n";
 char ErrorSOC[]="State of Charge out of range!\n";
 char ErrorChargingRate[]="Charge Rate out of range!\n";
 
+void ChargingRate(float chargeRate);
+void CheckTemperatureRange(float temperature);
+void CheckStateOfCharge(float soc);
+
 union
 {
   struct
