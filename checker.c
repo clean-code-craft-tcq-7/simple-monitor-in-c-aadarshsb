@@ -1,15 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-char ErrorTemperature[]= "Temperature out of range!\n";
-char ErrorSOC[]="State of Charge out of range!\n";
-char ErrorChargingRate[]="Charge Rate out of range!\n";
-
-void ChargingRate(float chargeRate);
-void CheckTemperatureRange(float temperature);
-void CheckStateOfCharge(float soc);
-
-union
+typedef union
 {
   struct
   {
@@ -19,9 +11,17 @@ union
     unsigned char DummyBytes:5;
   }structErrors;
   unsigned char AllErrors;
-}unionErrors;
+}unionErrors_t;
 
-unionErrors unionErrorObj={0};
+char ErrorTemperature[]= "Temperature out of range!\n";
+char ErrorSOC[]="State of Charge out of range!\n";
+char ErrorChargingRate[]="Charge Rate out of range!\n";
+
+void ChargingRate(float chargeRate);
+void CheckTemperatureRange(float temperature);
+void CheckStateOfCharge(float soc);
+
+unionErrors_t unionErrorObj={0};
 
 int batteryIsOk(float temperature, float soc, float chargeRate)
 {
