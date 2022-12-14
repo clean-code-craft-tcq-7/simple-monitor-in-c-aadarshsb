@@ -86,6 +86,8 @@ void PrintTheError(char* ErrorString)
 }
 
 int main() {
-  assert(batteryIsOk(25, 70, 0.7));
-  assert(!batteryIsOk(50, 85, 0));
+  batteryIsOk(25, 70, 0.7);
+  batteryIsOk(50, 85, 0);
+//  assert(batteryIsOk(25, 70, 0.7));
+//  assert(!batteryIsOk(50, 85, 0));
 }
