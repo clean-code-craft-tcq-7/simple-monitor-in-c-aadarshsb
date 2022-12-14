@@ -20,6 +20,7 @@ char ErrorChargingRate[]="Charge Rate out of range!\n";
 void ChargingRate(float chargeRate);
 void CheckTemperatureRange(float temperature);
 void CheckStateOfCharge(float soc);
+void PrintTheError(char* ErrorString);
 
 unionErrors_t unionErrorObj={0};
 
