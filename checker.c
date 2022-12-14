@@ -86,7 +86,9 @@ void PrintTheError(char* ErrorString)
 }
 
 int main() {
+  printf("First one \n");
   batteryIsOk(25, 70, 0.7);
+  printf("Second one \n");
   batteryIsOk(50, 85, 0);
 //  assert(batteryIsOk(25, 70, 0.7));
 //  assert(!batteryIsOk(50, 85, 0));
