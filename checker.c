@@ -21,7 +21,7 @@ union
   unsigned char AllErrors;
 }unionErrors;
 
-static unionErrors unionErrorObj;
+unionErrors unionErrorObj={0};
 
 int batteryIsOk(float temperature, float soc, float chargeRate)
 {
@@ -31,9 +31,13 @@ int batteryIsOk(float temperature, float soc, float chargeRate)
   ChargingRate(chargeRate);
   //Check if any bits are overwritten due to Error(s)
   if(0 == unionErrorObj.AllErrors)
+  {
     return 0;
+  }
   else 
+  {
     return 1;
+  }
 }
 
 void CheckTemperatureRange(float temperature)
